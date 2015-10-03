@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <h2 class="header">Create Loan</h2>
+        </div>
+    </div>
+    <div class="row">
+        <a [router-link]="['/loan-list']" class="waves-effect waves-light btn">Back to loans</a>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <form (submit)="add($event)" [ng-form-model]="loanForm">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="title" type="text" class="validate" maxlength="15" ng-control="title">
+                        <label for="title">Title</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="description" class="materialize-textarea" ng-control="description"></textarea>
+                        <label for="description">Description</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m6 l4">
+                        <input id="amount" type="number" class="validate" ng-control="amount">
+                        <label for="amount">Amount</label>
+                    </div>
+                    <div class="input-field col s12 m6 l4">
+                        <input id="period" type="number" placeholder="Number of month" class="validate" ng-control="period">
+                        <label for="period" class="active">Period</label>
+                    </div>
+                    <div class="input-field col s12 m6 l4">
+                        <input id="rate" type="number" class="validate" ng-control="rate">
+                        <label for="rate">Rate</label>
+                    </div>
+                </div>
+                <button type="submit" class="waves-effect waves-light btn">Create</button>
+            </form>
+        </div>
+    </div>
+</div>
